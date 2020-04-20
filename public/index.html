@@ -1,1 +1,71 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Casa Criativa</title>
+<link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">         <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="container">
+<section id="intro">
+<header>
+    <a href="/">
+        <img src="logo.png" alt="imagem da logomarca">
+    </a>
+    
+</header>
+
+    <main>
+<p>
+    Ficar em casa em tempos de crise não deve ser nada fácil, por isso iremos compartilhar com você <strong>idéias, brincadeiras, dicas e muito mais.</strong> </p>
+<p class="ton"> Saia da rotina, não fique parado!</p>
+<p> Contribuia em adicionar idéias e confira nossa lista de idéias cadastradas.</p>
+</main>
+
+<section id="buttons">
+<button onclick="onOff()">+ Adicionar idéias</button>
+<a href="/ideias" class="button">Ver idéias</a>
+</section> 
+
+<footer>
+    © <a href="https://github.com/S-Cleb" target="_blank">s-cleb</a> </p>
+
+</footer>
+</section>
+
+<section id="ideias">
+
+{% for idea in ideas %}
+
+<div class="idea">
+    <img src="{{idea.image}}" alt="imagem de curso de {{idea.title}}">
+<div class="content">
+    <h3>{{idea.title}}</h3>
+    <p>{{idea.category}}</p>
+    <div class="description">
+        {{idea.description}}
+    </div>
+    <a href="{{idea.link}}" target="_blank">Ir para a Idéia</a>
+
+</div>
+</div>
+{% endfor %}
+
+
+
+</section></div>
+
+<!--Modal -->
+{% include "modal.html" %}
+
+<script src="scripts.js"></script>
+
+</body>
+
+
+
+
+</html>
